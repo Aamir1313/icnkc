@@ -1,0 +1,201 @@
+.nav
+{
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16);
+  font-family: "brandon-grotesque", sans-serif;
+}
+
+.mainToggle, [id^=toggle]
+{
+  display: none;
+}
+
+#logo
+{
+  float: left;
+  padding: 10px 30px;
+}
+
+#logo img
+{
+  max-height: 50px;
+}
+
+#logo img:hover
+{
+  opacity: 0.4;
+  cursor: pointer;
+}
+
+/* Desktop */
+@media all and (min-width: 1100px)
+{
+  .menu
+  {
+    float: left;
+    margin-top: 27px;
+  }
+
+  .nav ul
+  {
+    list-style: none;
+    background: #fff;
+  }
+
+  .nav ul > li
+  {
+    float: left;
+    position: relative;
+  }
+
+  .nav a, .nav label
+  {
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #000000;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  .nav a
+  {
+    display: block;
+  }
+
+  a:hover, label:hover
+  {
+    opacity: 0.4;
+  }
+
+  .nav li ul li
+  {
+    width: 200px;
+  }
+
+  /* Dropdown Animation */
+  .nav li ul
+  {
+    position: absolute;
+    left: 0;
+    top: 36px;
+    z-index: 1;
+    max-height: 0;
+    overflow: hidden;
+    -webkit-transform: perspective(400) rotate3d(1,0,0,-90deg);
+    -webkit-transform-origin: 50% 0;
+    -webkit-transition: 350ms;
+    -moz-transition: 350ms;
+    -o-transition: 350ms;
+    transition: 350ms;
+    border: 1px solid #e1e4e6;
+  }
+
+  .nav ul > li:hover ul
+  {
+    max-height: 1000px;
+    -webkit-transform: perspective(400) rotate3d(0,0,0,0);
+  }
+}
+
+/* Mobile */
+@media all and (max-width: 1100px)
+{
+  #logo
+  {
+    padding: 10px 10px;
+  }
+
+  .mainToggle
+  {
+    float: right;
+    display: inline-block;
+    padding-right: 10px;
+    padding-top: 15px;
+  }
+
+  .bar1, .bar2, .bar3
+  {
+    background-color: #333;
+    width: 35px;
+    height: 5px;
+    margin: 6px 0;
+  }
+
+  .change .bar1
+  {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+
+  .change .bar2
+  {
+    opacity: 0;
+  }
+
+  .change .bar3
+  {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+  }
+
+  label
+  {
+    cursor: pointer;
+  }
+
+  .menu
+  {
+    float:left;
+    clear: both;
+    width: 100%;
+  }
+
+  .nav ul
+  {
+    background: #fff;
+    list-style: none;
+    width: 100%;
+    display: none;
+  }
+
+  .subList
+  {
+    display: none;
+  }
+
+  [id^="toggle"]:checked + div ul.mainList,
+  [id^="toggle"]:checked + ul.subList
+  {
+    display: block;
+  }
+
+  .nav a, li label
+  {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    word-wrap: break-word;
+  }
+
+  .nav a
+  {
+    color: grey;
+  }
+
+  li label:after
+  {
+    content: '\203A';
+    float: right;
+    transform: rotate(90deg);
+  }
+
+  li li a
+  {
+    padding: 10px 10px 10px 30px;
+  }
+
+  a:hover, a:active, label:hover
+  {
+    opacity: 0.4;
+  }
+}
